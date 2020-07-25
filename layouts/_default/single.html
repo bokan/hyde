@@ -5,6 +5,11 @@
   {{ .Content }}
 </div>
 
+{{ if not .Site.IsServer }}
+{{ template "_internal/google_analytics_async.html" . }}
+<img src="https://static.bokan.io/content/2020-04-12/badge.png" alt="Badge"/>
+{{ end }}
+
 {{ if .Site.DisqusShortname -}}
 <h2>Comments</h2>
 {{ template "_internal/disqus.html" . }}
